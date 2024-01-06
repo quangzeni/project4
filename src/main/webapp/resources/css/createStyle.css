@@ -1,0 +1,47 @@
+.container {
+    max-width: 560px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+label {
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="radio"],
+input[type="submit"] {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="radio"] {
+    display: inline-block;
+    /*margin-right: 0.5rem;*/
+    /*vertical-align: middle; */
+    margin-right: 2px;
+}
+
+input[type="submit"] {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
