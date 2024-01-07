@@ -54,7 +54,6 @@ public class ProductServiceImp implements ProductService {
     @Override
     @Transactional
     public boolean update(Product product) {
-        // Logic để cập nhật thông tin sản phẩm
         return true;
     }
 

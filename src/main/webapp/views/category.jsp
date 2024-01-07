@@ -14,42 +14,57 @@
 </head>
 <body>
 <div class="container">
-    <div class="left">
-        <ul>
-            <li><a href="<%=request.getContextPath()%>/categoryController/findAll">Category Management</a></li>
-            <li><a href="<%=request.getContextPath()%>/productController/findAll">Product Management</a></li>
-            <li><a href="<%=request.getContextPath()%>/customerAccountController/findAll">Customer Management</a></li>
-            <li><a href="<%=request.getContextPath()%>/orderController/findAll">Order Management</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <table border="1">
-            <thead>
-            <tr>
-                <th>Catalog Id</th>
-                <th>Catalog Name</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${listCategories}" var="category">
+    <header class="header">
+        <h1>Category Manager</h1>
+    </header>
+    <div class="main-content">
+        <div class="left sidebar">
+            <ul>
+                <li><a href="<%=request.getContextPath()%>/categoryController/findAll">Category Management</a></li>
+                <li><a href="<%=request.getContextPath()%>/productController/findAll">Product Management</a></li>
+                <li><a href="<%=request.getContextPath()%>/customerAccountController/findAll">Customer Management</a>
+                </li>
+                <li><a href="<%=request.getContextPath()%>/orderController/findAll">Order Management</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <table border="1">
+                <thead>
                 <tr>
-                    <td>${category.id}</td>
-                    <td>${category.categoryName}</td>
-                    <td>${category.description}</td>
-                    <td>${category.status?"Active":"Inactive"}</td>
-                    <td>
-                        <a href="<%=request.getContextPath()%>/categoryController/initUpdate/${category.id}">Update</a>
-                        <a href="<%=request.getContextPath()%>/categoryController/delete/${category.id}">Delete</a>
-                    </td>
+                    <th>Category Id</th>
+                    <th>Category Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <a href="<%=request.getContextPath()%>/views/newCategory.jsp">Create New Category</a>
+                </thead>
+                <tbody>
+                <c:forEach items="${listCategories}" var="category">
+                    <tr>
+                        <td>${category.id}</td>
+                        <td>${category.categoryName}</td>
+                        <td>${category.description}</td>
+                        <td>${category.status?"Active":"Inactive"}</td>
+                        <td>
+                            <div class="btn-container">
+                                <a href="<%=request.getContextPath()%>/categoryController/initUpdate/${category.id}"
+                                   class="btn btn-update">Update</a>
+                                <a href="<%=request.getContextPath()%>/categoryController/delete/${category.id}"
+                                   class="btn btn-delete">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            <div class="button-container">
+                <a href="<%=request.getContextPath()%>/views/newCategory.jsp">
+                    <button class="btn btn-create">Create New Category</button>
+                </a>
+            </div>
+        </div>
     </div>
+
 </div>
 
 </body>

@@ -21,8 +21,8 @@ public class OrderController {
     @GetMapping("/findAll")
     public ModelAndView findAll() {
         ModelAndView mav = new ModelAndView("orders");
-        List<Order> orderList = orderService.findAll();
-        mav.addObject("orderList", orderList);
+        List<Order> listOrder = orderService.findAll();
+        mav.addObject("listOrder", listOrder);
         return mav;
     }
 

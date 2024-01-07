@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="<%=request.getContextPath()%>/categoryController/create" method="post", enctype="multipart/form-data" modelMap = "categoryNew">
+    <form action="<%=request.getContextPath()%>/categoryController/create" method="post" enctype="multipart/form-data" modelMap = "categoryNew">
         <label for ="name">Category Name</label>
         <input type="text" id="name" name="categoryName"/><br>
         <label for = "description">Description</label>

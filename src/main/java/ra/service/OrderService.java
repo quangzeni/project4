@@ -11,9 +11,8 @@ public interface OrderService {
 
     Order findById(Long orderId);
 
-    boolean createOrder(Order order);
 
-    boolean updateOrderStatus(Long orderId, OrderStatus newStatus);
+    boolean update(Long orderId, OrderStatus newStatus);
 
     boolean cancelOrder(Long orderId);
 

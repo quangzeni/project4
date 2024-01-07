@@ -19,9 +19,9 @@ public class CustomerAccountController {
 
     @GetMapping("/findAll")
     public ModelAndView findAll() {
-        ModelAndView mav = new ModelAndView("customerAccounts");
-        List<CustomerAccount> customerAccountList = customerAccountService.findAll();
-        mav.addObject("customerAccountList", customerAccountList);
+        ModelAndView mav = new ModelAndView("customerAccount");
+        List<CustomerAccount> listCustomerAccount = customerAccountService.findAll();
+        mav.addObject("listCustomerAccount", listCustomerAccount);
         return mav;
     }
 

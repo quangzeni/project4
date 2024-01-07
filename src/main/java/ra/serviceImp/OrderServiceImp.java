@@ -32,15 +32,8 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
-    @Transactional
-    public boolean createOrder(Order order) {
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public boolean updateOrderStatus(Long orderId, OrderStatus newStatus) {
-        return true;
+    public boolean update(Long orderId, OrderStatus newStatus) {
+        return false;
     }
 
     @Override

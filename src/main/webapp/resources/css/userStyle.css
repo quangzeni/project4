@@ -1,10 +1,19 @@
-.container{
+/* CSS cho container */
+.container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 1280px;
+}
+/* CSS cho header */
+.header {
+    padding: 1rem;
+    background-color: #343a40;
+    color: #fff;
+}
+/* CSS cho main content */
+.main-content {
+    display: flex;
 }
 .left {
     width: 25%;
@@ -16,23 +25,94 @@
     width: 75%;
     padding: 1rem;
 }
-
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 20px;
 }
 
 th, td {
     text-align: left;
-    padding: 8px;
+    padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
 th {
     background-color: #f2f2f2;
+    color: #343a40;
+}
+tbody tr:hover {
+    background-color: #f5f5f5;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+/* viết css cho sideBar
+ */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    text-align: center;
+    width: 280px;
+    background-color: #343a40;
 }
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*css cho buttom
+ */
+.btn {
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-update {
+    background-color: #28a745; /* Màu xanh */
+    color: #fff;
+    border: 1px solid #218838; /* Màu viền xanh nhạt */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Màu đỏ */
+    color: #fff;
+    border: 1px solid #c82333; /* Màu viền đỏ nhạt */
+}
+
+
+/* CSS cho buttons */
+.btn-container {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 10px; /* Khoảng cách giữa nút và bảng */
+}
+
+/*  css cho button tạo mới*/
+.button-container {
+    margin-top: 10px;
+}
+
+.btn-create {
+    padding: 10px 16px;
+    background-color: #007bff; /* Màu xanh của Bootstrap */
+color: #fff;
+border: 1px solid #007bff; /* Màu viền xanh của Bootstrap */
+border-radius: 4px;
+text-decoration: none;
+cursor: pointer;
+}
+
+

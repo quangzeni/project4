@@ -27,23 +27,44 @@ public class CustomerAccountServiceImp implements CustomerAccountService {
 
     @Override
     @Transactional
-    public boolean createCustomerAccount(CustomerAccount customerAccount) {
-        // Logic để tạo tài khoản khách hàng
-        return true;
+    public boolean save(CustomerAccount customerAccount) {
+        CustomerAccount customerAccountNew = customerAccountRepository.save(customerAccount);
+        return customerAccountNew != null ? true : false;
     }
 
     @Override
     @Transactional
-    public boolean updateCustomerAccount(CustomerAccount customerAccount) {
-        // Logic để cập nhật thông tin tài khoản khách hàng
-        return true;
+    public boolean update(CustomerAccount customerAccountUpdate) {
+        boolean result = false;
+        try {
+            CustomerAccount exitingCustomerAccount = customerAccountRepository.findById(customerAccountUpdate.getId()).orElse(null);
+            if (exitingCustomerAccount != null){
+                exitingCustomerAccount.setEmail(customerAccountUpdate.getEmail());
+                exitingCustomerAccount.setPassword(customerAccountUpdate.getPassword());
+                exitingCustomerAccount.setCreatedAt(customerAccountUpdate.getCreatedAt());
+                exitingCustomerAccount.setRole(customerAccountUpdate.getRole());
+                exitingCustomerAccount.setStatus(customerAccountUpdate.isStatus());
+                customerAccountRepository.save(exitingCustomerAccount);
+                result = true;
+            }else {
+                result = false;
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     @Transactional
-    public boolean deleteCustomerAccount(Long accountId) {
-        // Logic để xóa tài khoản khách hàng
-        return true;
+    public boolean delete(Long accountId) {
+        boolean result = false;
+        try {
+            customerAccountRepository.deleteById(accountId);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return result;
     }
 }
 

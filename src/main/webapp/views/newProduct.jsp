@@ -6,7 +6,7 @@
   Time: 7:53 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
     <link href="<%=request.getContextPath()%>/resources/css/createStyle.css" rel="stylesheet"/>
@@ -29,8 +29,8 @@
         <input type="file" id="otherImages" name="otherImages" multiple/><br>
         <label for="unit">Unit</label>
         <input type="text" id="unit" name="unit"/><br>
-        <label for="category_id">Category</label>
-        <select id="category_id" name="category">
+        <label for="category">Category</label>
+        <select id="category" name="category.id">
             <c:forEach items="${listCategories}" var="category">
                 <option value="${category.id}">${category.categoryName}</option>
             </c:forEach>

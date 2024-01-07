@@ -9,10 +9,10 @@ public interface CustomerAccountService {
 
     CustomerAccount findById(Long accountId);
 
-    boolean createCustomerAccount(CustomerAccount customerAccount);
+    boolean save(CustomerAccount customerAccount);
 
-    boolean updateCustomerAccount(CustomerAccount customerAccount);
+    boolean update(CustomerAccount customerAccount);
 
-    boolean deleteCustomerAccount(Long accountId);
+    boolean delete(Long accountId);
 }
 
