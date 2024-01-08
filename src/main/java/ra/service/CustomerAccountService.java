@@ -9,6 +9,8 @@ public interface CustomerAccountService {
 
     CustomerAccount findById(Long accountId);
 
+    CustomerAccount login(String email, String password);
+
     boolean save(CustomerAccount customerAccount);
 
     boolean update(CustomerAccount customerAccount);

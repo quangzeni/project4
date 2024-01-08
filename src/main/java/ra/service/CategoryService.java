@@ -14,4 +14,8 @@ public interface CategoryService {
     boolean update(Category category);
 
     boolean delete(Long categoryId);
+
+    List<Category> searchByName (String categoryName);
+
+    List<Category> sortByName (String sortValue);
 }

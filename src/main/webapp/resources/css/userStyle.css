@@ -5,30 +5,31 @@
     margin: 0 auto;
     max-width: 1280px;
 }
-/* CSS cho header */
-.header {
+
+/* CSS chung cho các phần header, left, và content */
+.header, .left, .content {
     padding: 1rem;
+}
+
+.header {
     background-color: #343a40;
     color: #fff;
 }
-/* CSS cho main content */
-.main-content {
-    display: flex;
-}
+
 .left {
     width: 25%;
-    padding: 1rem;
     background-color: #f5f5f5;
 }
 
 .content {
-    width: 75%;
-    padding: 1rem;
+    flex: 1;
+    margin-left: 20px;
 }
+
+/* CSS cho bảng */
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 20px;
 }
 
 th, td {
@@ -41,12 +42,12 @@ th {
     background-color: #f2f2f2;
     color: #343a40;
 }
+
 tbody tr:hover {
     background-color: #f5f5f5;
 }
 
-/* viết css cho sideBar
- */
+/* CSS cho sidebar */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -63,6 +64,11 @@ tbody tr:hover {
     color: #fff;
     text-decoration: none;
     padding: 10px;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s;
+}
+.sidebar a:hover {
+    background-color: #555;
 }
 .sidebar ul {
     list-style: none;
@@ -70,8 +76,13 @@ tbody tr:hover {
     margin: 0;
 }
 
-/*css cho buttom
- */
+/* CSS cho main content và buttons */
+.main-content {
+    display: flex;
+    flex: 1;
+    padding-top: 5px;
+}
+
 .btn {
     padding: 8px 16px;
     text-decoration: none;
@@ -81,38 +92,60 @@ tbody tr:hover {
 }
 
 .btn-update {
-    background-color: #28a745; /* Màu xanh */
+    background-color: #28a745;
     color: #fff;
-    border: 1px solid #218838; /* Màu viền xanh nhạt */
+    border: 1px solid #218838;
 }
 
 .btn-delete {
-    background-color: #dc3545; /* Màu đỏ */
+    background-color: #dc3545;
     color: #fff;
-    border: 1px solid #c82333; /* Màu viền đỏ nhạt */
-}
-
-
-/* CSS cho buttons */
-.btn-container {
-    display: flex;
-    gap: 10px; /* Khoảng cách giữa các nút */
-    margin-top: 10px; /* Khoảng cách giữa nút và bảng */
-}
-
-/*  css cho button tạo mới*/
-.button-container {
-    margin-top: 10px;
+    border: 1px solid #c82333;
 }
 
 .btn-create {
     padding: 10px 16px;
-    background-color: #007bff; /* Màu xanh của Bootstrap */
-color: #fff;
-border: 1px solid #007bff; /* Màu viền xanh của Bootstrap */
-border-radius: 4px;
-text-decoration: none;
-cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
+/* CSS cho ô tìm kiếm và ô sắp xếp */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
 
+.search-container, .sort-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-container label, .sort-container label {
+    margin-right: 10px;
+    color: #555;
+}
+
+#searchInput, #sortSelect {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.btn-search, .btn-sort {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-search:hover, .btn-sort:hover {
+    background-color: #0056b3;
+}

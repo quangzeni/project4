@@ -62,5 +62,21 @@ public class CategoryController {
             return "error";
         }
     }
+
+    @GetMapping("/search")
+    public ModelAndView searchByName(@RequestParam("searchInput") String searchInput) {
+        List<Category> searchResults = categoryService.searchByName(searchInput);
+        ModelAndView mav = new ModelAndView("category");
+        mav.addObject("listCategories", searchResults);
+        return mav;
+    }
+
+    @GetMapping("/sortByName")
+    public ModelAndView sortByName(@RequestParam("sortSelect") String sortValue){
+        List<Category> sortedCategories = categoryService.sortByName(sortValue);
+        ModelAndView mav = new ModelAndView("category");
+        mav.addObject("listCategories", sortedCategories);
+        return mav;
+    }
 }
 

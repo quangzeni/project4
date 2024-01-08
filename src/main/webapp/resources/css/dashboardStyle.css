@@ -1,9 +1,14 @@
+/* Shared styles for sidebar and dashboard sections */
+.dashboard-section,
+.sidebar {
+    padding: 1.5rem;
+    text-align: center;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    padding: 1.5rem;
-    text-align: center;
     width: 280px;
     background-color: #343a40;
 }
@@ -14,36 +19,18 @@
     color: #fff;
     text-decoration: none;
     padding: 10px;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #555;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.header {
-    background-color: #343a40;
-    color: #fff;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.main-content {
-    display: flex;
-    flex: 1;
-    padding: 20px;
-}
-
-.content {
-    flex: 1;
-    margin-left: 20px;
 }
 
 .dashboard-section {
@@ -53,5 +40,45 @@
 }
 
 .dashboard-section h2 {
-    color: #343a40;
+    color: #282c2f;
 }
+
+/* Shared styles for dashboard container and its components */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.dashboard-container .header,
+.dashboard-container .content {
+    padding: 1rem;
+}
+
+.dashboard-container .header {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.dashboard-container .main-content {
+    display: flex;
+    flex: 1;
+    padding-top: 5px;
+}
+
+.dashboard-container .content {
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Modern colors for content items */
+.content {
+    background-color: #F7F8F3; /* Màu xanh dương */
+    color: #282c2f;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s; /* Hiệu ứng hover */
+}
+
+

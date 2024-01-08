@@ -26,11 +26,23 @@ public class CustomerAccountServiceImp implements CustomerAccountService {
     }
 
     @Override
+    public CustomerAccount login(String email, String password) {
+        CustomerAccount customerAccount = customerAccountRepository.findByEmail(email);
+        if ((customerAccount != null) && customerAccount.getPassword().equals(password)) {
+            return customerAccount;
+        }
+        return null;
+    }
+
+    @Override
     @Transactional
     public boolean save(CustomerAccount customerAccount) {
         CustomerAccount customerAccountNew = customerAccountRepository.save(customerAccount);
         return customerAccountNew != null ? true : false;
     }
+
+
+
 
     @Override
     @Transactional

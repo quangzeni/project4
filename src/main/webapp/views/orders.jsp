@@ -20,6 +20,7 @@
     <div class="main-content">
         <div class="left sidebar">
             <ul>
+                <li><a href="<%=request.getContextPath()%>/dashboardController">Dashboard</a></li>
                 <li><a href="<%=request.getContextPath()%>/categoryController/findAll">Category Management</a></li>
                 <li><a href="<%=request.getContextPath()%>/productController/findAll">Product Management</a></li>
                 <li><a href="<%=request.getContextPath()%>/customerAccountController/findAll">Customer Management</a></li>
@@ -27,6 +28,22 @@
             </ul>
         </div>
         <div class="content">
+            <%--            Tìm kiếm và sắp xếp--%>
+            <div class="table-controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" name="searchInput" placeholder="Enter order Id">
+                    <button class="btn btn-search">Search</button>
+                </div>
+                <div class="sort-container">
+                    <select id="sortSelect" name="sortSelect">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                    <button class="btn btn-sort">Sort</button>
+                </div>
+            </div>
+
+            <%--             Bảng--%>
             <table border="1">
                 <thead>
                 <tr>

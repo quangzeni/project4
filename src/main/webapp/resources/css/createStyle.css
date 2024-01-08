@@ -11,7 +11,7 @@ label {
     text-align: right;
     margin-right: 10px;
 }
-
+select,
 input[type="text"],
 input[type="number"],
 input[type="file"],
@@ -44,4 +44,27 @@ input[type="submit"] {
     cursor: pointer;
     padding: 0.5rem 1rem;
     text-align: center;
+}
+
+/* CSS cho radio buttons */
+.form-check {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form-check-input {
+    display: none;
+}
+
+.form-check-label {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-check-input:checked + .form-check-label {
+    background-color: #007bff;
+    color: #fff;
 }

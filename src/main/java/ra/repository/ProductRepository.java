@@ -12,12 +12,14 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {
-    @Query("select p from Product p where p.productName like %?1%")
-    Page<Product> findByProductName(String name, Pageable pageable);
-    int countByProductNameContains(String name);
-    @Query("select p from Product p where p.status = false ")
-    List<Product> findAccountByStatusFalse();
-    @Query("select p from Product p where p.status = true")
-    List<Product> findAccountByStatusTrue();
+//    @Query("select p from Product p where p.productName like %?1%")
+//    Page<Product> findByProductName(String name, Pageable pageable);
+//    int countByProductNameContains(String name);
+//    @Query("select p from Product p where p.status = false ")
+//    List<Product> findAccountByStatusFalse();
+//    @Query("select p from Product p where p.status = true")
+//    List<Product> findAccountByStatusTrue();
+
+    List<Product> findByProductNameContainingIgnoreCase(String productName);
 }
 

@@ -1,6 +1,7 @@
 package ra.serviceImp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -53,8 +54,25 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     @Transactional
-    public boolean update(Product product) {
-        return true;
+    public boolean update(Product productUpdate) {
+        boolean result = false;
+        try {
+            Product existingProduct = productRepository.findById(productUpdate.getId()).orElse(null);
+            if (existingProduct != null){
+                existingProduct.setProductName(productUpdate.getProductName());
+                existingProduct.setPrice(productUpdate.getPrice());
+                existingProduct.setDescription(productUpdate.getDescription());
+                existingProduct.setStatus(productUpdate.isStatus());
+                productRepository.save(existingProduct);
+                result = true;
+            }else {
+                result = false;
+            }
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return result;
     }
 
     @Override
@@ -68,6 +86,17 @@ public class ProductServiceImp implements ProductService {
             ex.printStackTrace();
         }
         return true;
+    }
+
+    @Override
+    public List<Product> searchByName(String productName) {
+        return productRepository.findByProductNameContainingIgnoreCase(productName);
+    }
+
+    @Override
+    public List<Product> sortByName(String sortValue) {
+        Sort sort = "asc".equals(sortValue) ? Sort.by(Sort.Order.asc("productName")) : Sort.by(Sort.Order.desc("productName"));
+        return productRepository.findAll(sort);
     }
 }
 

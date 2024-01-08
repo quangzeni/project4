@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: Owner
-  Date: 12/28/2023
-  Time: 11:56 AM
+  Date: 1/7/2024
+  Time: 11:04 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Error</title>
+    <title>UserPage</title>
 </head>
 <body>
-    <h2>Có lỗi trong quá trình xử lý</h2>
+<h2>Xin chào</h2>
 </body>
 </html>

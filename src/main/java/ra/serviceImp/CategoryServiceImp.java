@@ -1,6 +1,7 @@
 package ra.serviceImp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ra.model.Category;
 import ra.repository.CategoryRepository;
@@ -64,6 +65,17 @@ public class CategoryServiceImp implements CategoryService {
             ex.printStackTrace();
         }
         return result;
+    }
+
+    @Override
+    public List<Category> searchByName(String categoryName) {
+        return categoryRepository.findByCategoryNameContainingIgnoreCase(categoryName);
+    }
+
+    @Override
+    public List<Category> sortByName(String sortValue) {
+        Sort sort = "asc".equals(sortValue) ? Sort.by(Sort.Order.asc("categoryName")) : Sort.by(Sort.Order.desc("categoryName"));
+        return categoryRepository.findAll(sort);
     }
 }
 

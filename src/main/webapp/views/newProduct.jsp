@@ -14,8 +14,9 @@
 </head>
 <body>
 <div class="container">
-    <form action="<%=request.getContextPath()%>/productController/create" method="post" enctype="multipart/form-data" modelMap="productNew">
-        <label for="id">Product Id</label>
+    <form action="<%=request.getContextPath()%>/productController/create" method="post" enctype="multipart/form-data"
+          modelMap="productNew">
+        <label for="id">ProductId</label>
         <input type="text" id="id" name="id"/><br>
         <label for="name">Product Name</label>
         <input type="text" id="name" name="productName"/><br>
@@ -36,8 +37,14 @@
             </c:forEach>
         </select><br>
         <label for="active">Status</label>
-        <input type="radio" id="active" name="status" value="true" checked/><label for="active">Active</label>
-        <input type="radio" id="inactive" name="status" value="false"/><label for="inactive">Inactive</label><br>
+        <%--        <input type="radio" id="active" name="status" value="true" checked/><label for="active">Active</label>--%>
+        <%--        <input type="radio" id="inactive" name="status" value="false"/><label for="inactive">Inactive</label><br>--%>
+        <input type="radio" id="active" name="status" value="true" class="form-check-input" checked/>
+        <label for="active" class="form-check-label">Active</label>
+
+        <input type="radio" id="inactive" name="status" value="false" class="form-check-input"/>
+        <label for="inactive" class="form-check-label">Inactive</label>
+
         <input type="submit" value="Create"/>
     </form>
 </div>

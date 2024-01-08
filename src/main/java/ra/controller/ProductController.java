@@ -56,7 +56,7 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    public String updateProduct(@ModelAttribute("product") Product productUpdate) {
+    public String updateProduct(@ModelAttribute("productUpdate") Product productUpdate) {
         boolean result = productService.update(productUpdate);
         if (result) {
             return "redirect:/productController/findAll";
@@ -73,5 +73,20 @@ public class ProductController {
         } else {
             return "error";
         }
+    }
+    @GetMapping("/search")
+    public ModelAndView searchByName(@RequestParam("searchInput") String searchInput) {
+        List<Product> searchResults = productService.searchByName(searchInput);
+        ModelAndView mav = new ModelAndView("products");
+        mav.addObject("productList", searchResults);
+        return mav;
+    }
+
+    @GetMapping("/sortByName")
+    public ModelAndView sortByName(@RequestParam("sortSelect") String sortValue){
+        List<Product> sortedCategories = productService.sortByName(sortValue);
+        ModelAndView mav = new ModelAndView("products");
+        mav.addObject("productList", sortedCategories);
+        return mav;
     }
 }

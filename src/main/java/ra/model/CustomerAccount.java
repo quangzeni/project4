@@ -25,9 +25,7 @@ public class CustomerAccount {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-//    @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
-//    private UserRole role;
     private String role;
 
     @Column(name = "status")

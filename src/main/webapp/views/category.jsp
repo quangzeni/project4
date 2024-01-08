@@ -20,18 +20,39 @@
     <div class="main-content">
         <div class="left sidebar">
             <ul>
+                <li><a href="<%=request.getContextPath()%>/dashboardController">Dashboard</a></li>
                 <li><a href="<%=request.getContextPath()%>/categoryController/findAll">Category Management</a></li>
                 <li><a href="<%=request.getContextPath()%>/productController/findAll">Product Management</a></li>
-                <li><a href="<%=request.getContextPath()%>/customerAccountController/findAll">Customer Management</a>
-                </li>
+                <li><a href="<%=request.getContextPath()%>/customerAccountController/findAll">Customer Management</a></li>
                 <li><a href="<%=request.getContextPath()%>/orderController/findAll">Order Management</a></li>
             </ul>
         </div>
         <div class="content">
+            <%--Tìm kiếm và sắp xếp--%>
+            <div class="table-controls">
+                <div class="search-container">
+                    <form action="<%=request.getContextPath()%>/categoryController/search" method="get">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Enter category name">
+                        <button class="btn btn-search">Search</button>
+                    </form>
+
+                </div>
+                <div class="sort-container">
+                    <form action="<%=request.getContextPath()%>/categoryController/sortByName" method="get">
+                        <select id="sortSelect" name="sortSelect">
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
+                        </select>
+                        <button class="btn btn-sort">Sort</button>
+                    </form>
+                </div>
+            </div>
+
+            <%--Bảng--%>
             <table border="1">
                 <thead>
                 <tr>
-                    <th>Category Id</th>
+                    <th>Id</th>
                     <th>Category Name</th>
                     <th>Description</th>
                     <th>Status</th>
