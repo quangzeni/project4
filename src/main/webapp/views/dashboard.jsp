@@ -22,9 +22,12 @@
         </div>
         <div class="content">
             <div class="dashboard-section">
-                <h2>Category</h2>
-                <p>Total Categories: ${listCategories.size()}</p>
+                <h2>Account</h2>
+                <p>Total Accounts: ${customerAccountList.size()}</p>
+                <p>Active Accounts: ${activeAccount}</p>
+                <p>Inactive Accounts: ${customerAccountList.size()-activeAccount}</p>
             </div>
+
             <div class="dashboard-section">
                 <h2>Product</h2>
                 <p>Total Products: ${productList.size()}</p>
@@ -34,11 +37,17 @@
             <div class="dashboard-section">
                 <h2>Order</h2>
                 <p>Total Accounts: ${orderList.size()}</p>
+                <p>Cancel Order: ${cancelOrder}</p>
+                <p>Waiting Order: ${waitingOrder}</p>
+                <p>Confirm Order: ${confirmOrder}</p>
+                <p>Complete Order: ${completeOrder}</p>
             </div>
             <div class="dashboard-section">
-                <h2>Account</h2>
-                <p>Total Accounts: ${customerAccountList.size()}</p>
+                <h2>Revenue</h2>
+                <p>This Month: ${totalRevenue}</p>
+                <p>Today: ${todayRevenue}</p>
             </div>
+
         </div>
     </div>
 </div>

@@ -9,6 +9,7 @@ import ra.service.CategoryService;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryServiceImp implements CategoryService {
@@ -58,6 +59,11 @@ public class CategoryServiceImp implements CategoryService {
     public boolean delete(Long categoryId) {
         boolean result = false;
         try {
+//            Optional<Category> categoryOptional = categoryRepository.findById(categoryId);
+//            if (categoryOptional.isPresent()){
+//                Category category = categoryOptional.get();
+//                if (category.getP)
+//            }
             categoryRepository.deleteById(categoryId);
             result = true;
         }
